@@ -114,18 +114,7 @@ mecanumDrive1.setMaxOutput(1.0);
         // This method will be called once per scheduler run when in simulation
 
     }
-    public void knockoffSwerveDrive(Joystick joystick){
-        double maxSpeed = ((joystick.getRawAxis(3)*-1)+1
-        )*0.5;
-        double x = -joystick.getRawAxis(1)*maxSpeed; 
-        double y = joystick.getRawAxis(0)*maxSpeed;
-        double theta = -joystick.getRawAxis(2)/2 *maxSpeed; //this could be disasterous idfk
-        //note that we will probably want to replace this with field oriented once we have the means
-        //copy over deadband from other laptop when you get home
-        mecanumDrive1.driveCartesian(x, y, theta);
-
-    }
-
+   
     public void drive(double x, double y, double theta){
         mecanumDrive1.driveCartesian(x, y, theta);
     }
